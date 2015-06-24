@@ -4,4 +4,10 @@
     android:layout_height="match_parent"
     tools:context=".SleepActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_demo_01" />
+
 </RelativeLayout>
