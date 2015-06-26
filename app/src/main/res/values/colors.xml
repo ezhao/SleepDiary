@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="score_green">#8CFFA3</color>
+    <color name="habit_background">#FDFDFC</color>
+    <color name="background_color">#F2F2F1</color>
+</resources>

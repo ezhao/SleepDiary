@@ -1,5 +1,6 @@
 package com.herokuapp.ezhao.sleepdiary.adapters;
 
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,13 +9,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.herokuapp.ezhao.sleepdiary.R;
+import com.herokuapp.ezhao.sleepdiary.models.Habit;
 
 import java.util.ArrayList;
 
 public class LogRecyclerAdapter extends RecyclerView.Adapter<LogRecyclerAdapter.ViewHolder> {
-    private ArrayList<String> items;
+    private ArrayList<Habit> items;
 
-    public LogRecyclerAdapter(ArrayList<String> items) {
+    public LogRecyclerAdapter(ArrayList<Habit> items) {
         this.items = items;
     }
 
@@ -26,7 +28,7 @@ public class LogRecyclerAdapter extends RecyclerView.Adapter<LogRecyclerAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        holder.bindHabit(items.get(position));
     }
 
     @Override
@@ -35,13 +37,20 @@ public class LogRecyclerAdapter extends RecyclerView.Adapter<LogRecyclerAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvHabitName;
-        public Button btnScore;
+        private TextView tvHabitName;
+        private Button btnScore;
 
         public ViewHolder(View view) {
             super(view);
             tvHabitName = (TextView) view.findViewById(R.id.tvHabitName);
             btnScore = (Button) view.findViewById(R.id.btnScore);
+
+            Typeface helveticaNeueLight = Typeface.createFromAsset(tvHabitName.getContext().getAssets(), "fonts/helveticaneuelight.ttf");
+            tvHabitName.setTypeface(helveticaNeueLight);
+        }
+
+        public void bindHabit(Habit habit) {
+            tvHabitName.setText(habit.getHabitName());
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.herokuapp.ezhao.sleepdiary;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.herokuapp.ezhao.sleepdiary.adapters.LogRecyclerAdapter;
+import com.herokuapp.ezhao.sleepdiary.models.Habit;
 
 import java.util.ArrayList;
 
@@ -26,9 +28,13 @@ public class LogActivity extends Activity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(layoutManager);
 
-        ArrayList<String> items = new ArrayList<>();
-        items.add("hello");
-        items.add("and another");
+        ArrayList<Habit> items = new ArrayList<>();
+        items.add(new Habit("Help someone"));
+        items.add(new Habit("Exercise"));
+        items.add(new Habit("Explore"));
+        items.add(new Habit("Relate"));
+        items.add(new Habit("Sleep"));
+        items.add(new Habit("Appreciate"));
 
         LogRecyclerAdapter recyclerAdapter = new LogRecyclerAdapter(items);
         recyclerView.setAdapter(recyclerAdapter);
