@@ -1,18 +1,20 @@
 package com.herokuapp.ezhao.sleepdiary;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.herokuapp.ezhao.sleepdiary.adapters.SimpleRecyclerAdapter;
+import com.herokuapp.ezhao.sleepdiary.adapters.DiaryRecyclerAdapter;
 
 import java.util.ArrayList;
 
 
-public class SleepActivity extends Activity {
+public class DiaryActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,13 @@ public class SleepActivity extends Activity {
         items.add("Yet another test of this RecyclerView thing");
         items.add("Lalala");
 
-        SimpleRecyclerAdapter recyclerAdapter = new SimpleRecyclerAdapter(items);
+        DiaryRecyclerAdapter recyclerAdapter = new DiaryRecyclerAdapter(items, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DiaryActivity.this, LogActivity.class);
+                startActivity(i);
+            }
+        });
         recyclerView.setAdapter(recyclerAdapter);
 
         RecyclerView.ItemDecoration itemDecoration =
