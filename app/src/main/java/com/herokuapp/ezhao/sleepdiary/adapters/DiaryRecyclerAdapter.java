@@ -45,7 +45,7 @@ public class DiaryRecyclerAdapter extends RecyclerView.Adapter<DiaryRecyclerAdap
             super(view);
             view.setOnClickListener(listener);
             tvDate = (TextView) view.findViewById(R.id.tvDate);
-            tvScore = (TextView) view.findViewById(R.id.tvScore);
+            tvScore = (TextView) view.findViewById(R.id.tvTotalScore);
         }
     }
 }

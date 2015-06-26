@@ -2,8 +2,14 @@ package com.herokuapp.ezhao.sleepdiary;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.herokuapp.ezhao.sleepdiary.adapters.LogRecyclerAdapter;
+
+import java.util.ArrayList;
 
 
 public class LogActivity extends Activity {
@@ -12,6 +18,20 @@ public class LogActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManager.scrollToPosition(0);
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+
+        ArrayList<String> items = new ArrayList<>();
+        items.add("hello");
+        items.add("and another");
+
+        LogRecyclerAdapter recyclerAdapter = new LogRecyclerAdapter(items);
+        recyclerView.setAdapter(recyclerAdapter);
     }
 
     @Override

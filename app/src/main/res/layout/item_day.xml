@@ -17,7 +17,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/tvScore"
+        android:id="@+id/tvTotalScore"
         android:text="6"
         android:gravity="end"
         android:layout_width="wrap_content"
