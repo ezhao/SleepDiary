@@ -20,12 +20,8 @@
 
     <Button
         android:id="@+id/btnScore"
-        android:background="@drawable/score_button_green"
-        android:layout_margin="12dp"
-        android:stateListAnimator="@null"
+        style="@style/ScoreButton"
         android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
