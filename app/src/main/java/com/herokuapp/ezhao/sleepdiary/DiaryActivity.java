@@ -41,10 +41,6 @@ public class DiaryActivity extends Activity {
             }
         });
         recyclerView.setAdapter(recyclerAdapter);
-
-        RecyclerView.ItemDecoration itemDecoration =
-                new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
-        recyclerView.addItemDecoration(itemDecoration);
     }
 
     @Override

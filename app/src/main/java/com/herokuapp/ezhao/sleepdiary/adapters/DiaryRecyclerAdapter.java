@@ -1,5 +1,6 @@
 package com.herokuapp.ezhao.sleepdiary.adapters;
 
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,10 @@ public class DiaryRecyclerAdapter extends RecyclerView.Adapter<DiaryRecyclerAdap
             view.setOnClickListener(listener);
             tvDate = (TextView) view.findViewById(R.id.tvDate);
             tvScore = (TextView) view.findViewById(R.id.tvTotalScore);
+
+            Typeface helveticaNeueLight = Typeface.createFromAsset(tvDate.getContext().getAssets(), "fonts/helveticaneuelight.ttf");
+            tvDate.setTypeface(helveticaNeueLight);
+            tvScore.setTypeface(helveticaNeueLight);
         }
     }
 }

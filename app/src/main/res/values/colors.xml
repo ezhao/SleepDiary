@@ -3,4 +3,5 @@
     <color name="score_green">#8CFFA3</color>
     <color name="habit_background">#FDFDFC</color>
     <color name="background_color">#F2F2F1</color>
+    <color name="single_day_background_color">#FFFFFF</color>
 </resources>

@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="?android:attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true"
-    android:paddingTop="50dp"
-    android:paddingBottom="50dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/SingleDay">
 
     <TextView
         android:id="@+id/tvDate"
         android:text="Friday, June 26th"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        style="@style/LargeListText" />
 
     <TextView
         android:id="@+id/tvTotalScore"
         android:text="6"
+        style="@style/ScoreText"
         android:gravity="end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/tvDate" />
+        android:layout_toEndOf="@+id/tvDate"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
